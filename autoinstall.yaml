@@ -1,0 +1,72 @@
+#cloud-config
+autoinstall:
+  version: 1
+  identity:
+    realname: "Nome do Usuário"
+    hostname: ubuntu-pc
+    username: usuario
+    # Gere uma senha segura com: mkpasswd --method=sha-512
+    password: "$y$j9T$uhkxlm8nUQaNu.6rl4k2d.$DIldpYy96OHg8lFjfXfc671BZcGWkPOmaDONGAhGSg3"
+  locale: pt_BR.utf8
+  keyboard:
+    layout: br
+  timezone: "America/Sao_Paulo"
+
+  packages:
+    - 7zip
+    - gimp
+    - git
+    - wget
+    - libreoffice
+    - flatpak
+    - firefox
+    - vlc
+    - curl
+    - chromium-browser
+    - gnome-tweaks
+    - snapd
+    - mesa-utils
+    - pipewire
+
+  snaps:
+    - name: btop
+      channel: latest/stable
+    - name: chromium
+      channel: latest/stable
+    - name: firefox
+      channel: latest/stable
+    - name: vlc
+      channel: latest/stable
+    - name: snap-store
+      channel: latest/stable
+    - name: terminal-parrot
+      channel: latest/stable
+
+  flatpaks:
+    - app.fotema.Fotema
+    - app.zen_browser.zen
+    - cc.arduino.IDE2
+    - com.github.huluti.Curtail
+    - com.github.tchx84.Flatseal
+    - com.google.Chrome
+    - com.mattjakeman.ExtensionManager
+    - com.valvesoftware.Steam
+    - de.haeckerfelix.Fragments
+    - de.haeckerfelix.Shortwave
+    - eu.nokun.MirrorHall
+    - info.febvre.Komikku
+    - io.github.peazip.PeaZip
+    - io.gitlab.adhami3310.Converter
+    - io.gitlab.news_flash.NewsFlash
+    - org.dupot.easyflatpak
+    - org.kde.isoimagewriter
+    - org.thonny.Thonny
+
+  codecs:
+    install: true
+
+  drivers:
+    install: true
+
+  updates: all
+  shutdown: reboot
