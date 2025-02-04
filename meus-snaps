@@ -1,0 +1,23 @@
+# gerado via bash:
+# snap list | awk 'NR>1 {print $1}' > meus-snaps.txt
+
+bare
+btop
+canonical-livepatch
+chromium
+chromium-ffmpeg
+core18
+core22
+core24
+cups
+firefox
+firmware-updater
+gnome-42-2204
+gnome-46-2404
+gtk-common-themes
+mesa-2404
+snap-store
+snapd
+snapd-desktop-integration
+terminal-parrot
+vlc
