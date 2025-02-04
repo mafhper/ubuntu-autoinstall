@@ -1,35 +1,43 @@
 #cloud-config
 autoinstall:
   version: 1
+  # Configurações de identidade do usuário e sistema
   identity:
     realname: "Nome do Usuário"
     hostname: ubuntu-pc
     username: usuario
-    # Gere uma senha segura com: mkpasswd --method=sha-512
+    # Gere uma senha criptografada com: mkpasswd --method=sha-512
     password: "$y$j9T$uhkxlm8nUQaNu.6rl4k2d.$DIldpYy96OHg8lFjfXfc671BZcGWkPOmaDONGAhGSg3"
   locale: pt_BR.utf8
   keyboard:
     layout: br
   timezone: "America/Sao_Paulo"
 
+  # Seção de instalação de pacotes via APT (.deb)
+  # Agrupamos os pacotes por funcionalidade e incluímos comentários para facilitar a manutenção
   packages:
-    - 7zip
-    - gimp
-    - git
+    # Utilitários básicos e ferramentas de rede
+    - curl
     - wget
+    - git
+    - 7zip
+
+    # Ferramentas de multimídia e produtividade
+    - gimp
     - libreoffice
-    - flatpak
     - firefox
     - vlc
-    - curl
-    - chromium-browser
+
+    # Utilitários para desenvolvimento e configuração do sistema
     - gnome-tweaks
-    - snapd
     - mesa-utils
     - pipewire
-    - xorriso
-    - genisoimage
 
+    # Softwares para manipulação de imagens ISO
+    - xorriso      # Para criação e manipulação de imagens ISO
+    - genisoimage  # Contém o comando mkisofs
+
+  # Seção de instalação de aplicativos via Snap
   snaps:
     - name: btop
       channel: latest/stable
@@ -44,6 +52,7 @@ autoinstall:
     - name: terminal-parrot
       channel: latest/stable
 
+  # Seção de instalação de aplicativos via Flatpak
   flatpaks:
     - app.fotema.Fotema
     - app.zen_browser.zen
@@ -64,11 +73,20 @@ autoinstall:
     - org.kde.isoimagewriter
     - org.thonny.Thonny
 
+  # Instalação automática de codecs e drivers proprietários ou adicionais
   codecs:
     install: true
 
   drivers:
     install: true
 
+  # Atualizações automáticas: 'all' garante que todas as atualizações sejam aplicadas
   updates: all
+
+  # Ação pós-instalação: reinicia o sistema ao final da instalação
   shutdown: reboot
+
+  # Seção para comandos executados após a instalação (pós-instalação)
+  # Ideal para configurações customizadas que não podem ser definidas diretamente via YAML
+  late-commands:
+    - curtin in-target --target=/target -- sh -c 'echo "Pós-instalação executada com sucesso!"'
