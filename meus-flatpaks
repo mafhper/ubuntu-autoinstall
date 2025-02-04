@@ -1,0 +1,21 @@
+# gerado via bash:
+# flatpak list --app --columns=application > meus-flatpaks.txt
+
+app.fotema.Fotema
+app.zen_browser.zen
+cc.arduino.IDE2
+com.github.huluti.Curtail
+com.github.tchx84.Flatseal
+com.google.Chrome
+com.mattjakeman.ExtensionManager
+com.valvesoftware.Steam
+de.haeckerfelix.Fragments
+de.haeckerfelix.Shortwave
+eu.nokun.MirrorHall
+info.febvre.Komikku
+io.github.peazip.PeaZip
+io.gitlab.adhami3310.Converter
+io.gitlab.news_flash.NewsFlash
+org.dupot.easyflatpak
+org.kde.isoimagewriter
+org.thonny.Thonny
