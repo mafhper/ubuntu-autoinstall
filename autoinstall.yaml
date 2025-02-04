@@ -27,6 +27,8 @@ autoinstall:
     - snapd
     - mesa-utils
     - pipewire
+    - xorriso
+    - genisoimage
 
   snaps:
     - name: btop
