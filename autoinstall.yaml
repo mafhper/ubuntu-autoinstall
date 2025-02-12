@@ -1,72 +1,168 @@
 #cloud-config
 autoinstall:
-  version: 1
-  identity:
-    realname: "Nome do Usuário"
-    hostname: ubuntu-pc
-    username: usuario
-    # Gere uma senha segura com: mkpasswd --method=sha-512
-    password: "$y$j9T$uhkxlm8nUQaNu.6rl4k2d.$DIldpYy96OHg8lFjfXfc671BZcGWkPOmaDONGAhGSg3"
-  locale: pt_BR.utf8
-  keyboard:
-    layout: br
-  timezone: "America/Sao_Paulo"
-
-  packages:
-    - 7zip
-    - gimp
-    - git
-    - wget
-    - libreoffice
-    - flatpak
-    - firefox
-    - vlc
-    - curl
-    - chromium-browser
-    - gnome-tweaks
-    - snapd
-    - mesa-utils
-    - pipewire
-
-  snaps:
-    - name: btop
-      channel: latest/stable
-    - name: chromium
-      channel: latest/stable
-    - name: firefox
-      channel: latest/stable
-    - name: vlc
-      channel: latest/stable
-    - name: snap-store
-      channel: latest/stable
-    - name: terminal-parrot
-      channel: latest/stable
-
-  flatpaks:
-    - app.fotema.Fotema
-    - app.zen_browser.zen
-    - cc.arduino.IDE2
-    - com.github.huluti.Curtail
-    - com.github.tchx84.Flatseal
-    - com.google.Chrome
-    - com.mattjakeman.ExtensionManager
-    - com.valvesoftware.Steam
-    - de.haeckerfelix.Fragments
-    - de.haeckerfelix.Shortwave
-    - eu.nokun.MirrorHall
-    - info.febvre.Komikku
-    - io.github.peazip.PeaZip
-    - io.gitlab.adhami3310.Converter
-    - io.gitlab.news_flash.NewsFlash
-    - org.dupot.easyflatpak
-    - org.kde.isoimagewriter
-    - org.thonny.Thonny
-
-  codecs:
-    install: true
-
-  drivers:
-    install: true
-
-  updates: all
-  shutdown: reboot
+    version: 1
+    identity:
+        realname: 'Name User'
+        hostname: ubuntu-desktop
+        username: userlocal
+        password: '$y$j9T$uhkxlm8nUQaNu.6rl4k2d.$DIldpYy96OHg8l671BZcGWkPOmaDONGAhGSg3'
+    locale: pt_BR.utf8
+    keyboard:
+        layout: br
+    timezone: "America/Sao_Paulo"   
+    packages:
+        - base-files
+        - base-passwd
+        - bash
+        - coreutils
+        - debianutils
+        - dpkg
+        - file
+        - findutils
+        - grep
+        - gzip
+        - initramfs-tools
+        - linux-base
+        - linux-firmware
+        - mount
+        - procps
+        - sed
+        - systemd
+        - udev
+        - util-linux
+        - xz-utils
+        - apt
+        - apt-utils
+        - aptdaemon
+        - command-not-found
+        - gnome-software
+        - snapd
+        - software-properties-common
+        - update-notifier
+        - unattended-upgrades
+        - adwaita-icon-theme
+        - at-spi2-core
+        - dconf-cli
+        - desktop-file-utils
+        - dmz-cursor-theme
+        - fontconfig
+        - fonts-ubuntu
+        - gsettings-desktop-schemas
+        - gnome-desktop3-data
+        - gnome-menus
+        - gnome-session
+        - gnome-settings-daemon
+        - gnome-shell
+        - gtk-update-icon-cache
+        - hicolor-icon-theme
+        - mutter-common
+        - nautilus
+        - yaru-theme-gnome-shell
+        - yaru-theme-gtk
+        - yaru-theme-icon
+        - xorg
+        - xserver-xorg
+        - xwayland
+        - wayland-protocols
+        - avahi-daemon
+        - ca-certificates
+        - curl
+        - dhcpcd-base
+        - dnsmasq-base
+        - iproute2
+        - iptables
+        - netplan.io
+        - network-manager
+        - openssh-client
+        - openssl
+        - ufw
+        - wpasupplicant
+        - wget
+        - alsa-utils
+        - gstreamer1.0-plugins-good
+        - gstreamer1.0-plugins-ugly
+        - pipewire
+        - pipewire-alsa
+        - pipewire-pulse
+        - pulseaudio
+        - v4l-utils
+        - cups
+        - apparmor
+        - gnupg
+        - sudo
+        - autoconf
+        - automake
+        - build-essential
+        - cmake
+        - gcc
+        - g++
+        - git
+        - make
+        - perl
+        - python3
+        - 7zip
+        - balena-etcher
+        - calibre
+        - code
+        - firefox
+        - gnome-terminal
+        - gedit
+        - libreoffice-calc
+        - libreoffice-impress
+        - libreoffice-writer
+        - nano
+        - nautilus
+        - rar
+        - rawtherapee
+        - steam-launcher
+        - thunderbird
+        - transmission-gtk
+        - unzip
+        - vim-tiny
+        - zip
+    snaps:
+        - name: bare
+        - name: btop
+        - name: canonical-livepatch
+        - name: chromium
+        - name: chromium-ffmpeg
+        - name: core18
+        - name: core22
+        - name: core24
+        - name: cups
+        - name: fbreader
+        - name: firefox
+        - name: firmware-updater
+        - name: gnome-42-2204
+        - name: gnome-46-2404
+        - name: gtk-common-themes
+        - name: mesa-2404
+        - name: snap-store
+        - name: snapd
+        - name: snapd-desktop-integration
+        - name: terminal-parrot
+        - name: vlc
+    flatpaks:
+        - app.fotema.Fotema
+        - app.zen_browser.zen
+        - cc.arduino.IDE2
+        - com.github.huluti.Curtail
+        - com.github.tchx84.Flatseal
+        - com.google.Chrome
+        - com.mattjakeman.ExtensionManager
+        - de.haeckerfelix.Fragments
+        - de.haeckerfelix.Shortwave
+        - eu.nokun.MirrorHall
+        - info.febvre.Komikku
+        - io.github.peazip.PeaZip
+        - io.gitlab.adhami3310.Converter
+        - io.gitlab.news_flash.NewsFlash
+        - org.dupot.easyflatpak
+        - org.kde.isoimagewriter
+        - org.thonny.Thonny
+    codecs:
+        install: true
+    drivers:
+        install: true
+    updates: all
+    shutdown: reboot
